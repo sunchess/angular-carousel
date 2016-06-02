@@ -268,7 +268,7 @@ angular.module('angular-carousel').run(['$templateCache', function($templateCach
                                     }
                                 }
                                 isRepeatBased = true;
-                                if (loop) angular.element(firstChild).attr('signal-repeat-done', ''); 
+                                if (loop) angular.element(firstChild).attr('signal-repeat-done', '');
                                 return false;
                             }
                         }
@@ -302,7 +302,7 @@ angular.module('angular-carousel').run(['$templateCache', function($templateCach
                                 if (eleToRemove) {
                                     iElement[0].replaceChild(copy[0], eleToRemove);
                                 } else {
-                                    var controlsNode = 
+                                    var controlsNode =
                                         document.querySelectorAll('#' + iElement[0].id + ' .rn-carousel-controls');
                                     iElement[0].insertBefore(copy[0], controlsNode[0]);
                                 }
@@ -374,14 +374,14 @@ angular.module('angular-carousel').run(['$templateCache', function($templateCach
                                 }
                             });
                         }
-                        if(iAttributes.rnCarouselControls!==undefined) {
-                            // dont use a directive for this
-                            var tpl = '<div class="rn-carousel-controls">\n' +
-                                '  <span class="rn-carousel-control rn-carousel-control-prev" ng-click="prevSlide()" ng-if="carouselIndex > 0 || loop"></span>\n' +
-                                '  <span class="rn-carousel-control rn-carousel-control-next" ng-click="nextSlide()" ng-if="carouselIndex < ' + repeatCollection + '.length - 1 || loop"></span>\n' +
-                                '</div>';
-                            iElement.append($compile(angular.element(tpl))(scope));
-                        }
+                       // if(iAttributes.rnCarouselControls!==undefined) {
+                       //     // dont use a directive for this
+                       //     var tpl = '<div class="rn-carousel-controls">\n' +
+                       //         '  <span class="rn-carousel-control rn-carousel-control-prev" ng-click="prevSlide()" ng-if="carouselIndex > 0 || loop"></span>\n' +
+                       //         '  <span class="rn-carousel-control rn-carousel-control-next" ng-click="nextSlide()" ng-if="carouselIndex < ' + repeatCollection + '.length - 1 || loop"></span>\n' +
+                       //         '</div>';
+                       //     iElement.append($compile(angular.element(tpl))(scope));
+                       // }
 
                         function getSlidesDOM() {
                             return iElement[0].querySelectorAll('ul[rn-carousel] > li');
@@ -647,7 +647,7 @@ angular.module('angular-carousel').run(['$templateCache', function($templateCach
 
                                 scope.$watchCollection(repeatCollection, function(newValue, oldValue) {
                                 // TODO: add looping support to update virtual slides
-                                    
+
                                     //console.log('repeatCollection', arguments);
                                     currentSlides = newValue;
                                     // if deepWatch ON ,manually compare objects to guess the new position
